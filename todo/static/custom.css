@@ -1,5 +1,5 @@
 body {
-    background-image: url(./background.jpg)
+    background-image: url(./assets/img/background.jpg)
 }
 
 #tasks-container {
@@ -23,6 +23,7 @@ ul, li {
     width:10em;
     padding:1em;
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transition: 0.3s;
 }
 
 ul li {
@@ -49,7 +50,7 @@ ul li:nth-child(5n) a {
     top:-10px;
 }
 
-ul li a:hover {
+.task:hover {
     box-shadow:10px 10px 7px rgba(0,0,0,.7);
     transform: scale(1.25);  
     position:relative;
@@ -67,5 +68,22 @@ ul li a:hover {
     height: 1em;
     text-align: center;
 }
-  
-  
+
+/* Task Detail */
+
+.main-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-it {
+    font-family: "kalam";
+    background:#ffc;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    height: 50vh;
+    width: 50vw;
+    padding: 3em;
+}

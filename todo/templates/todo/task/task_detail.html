@@ -3,8 +3,24 @@
 {% block title %}PixelIt | {{ task.title }}{% endblock title %}
 
 {% block body %}
-    <p>{{ task.title }}</p>
-    <p>{{ task.description }}</p>
-    <p>{{ task.created_at }}</p>
-    <p>{{ task.checked }}</p>
+<div class="main-container">
+    <div class="post-it">
+        <div class="content">
+            {% if task.checked %}
+                <h1 style="text-decoration: line-through;">{{ task.title }}</h1>
+            {% else %}
+                <h1>{{ task.title }}</h1>
+            {% endif %}
+            <h2>Created at: {{ task.created_at }}</h2>
+            <h2>End date: 
+                {% if task.end_date is None %}
+                No date registered!
+                {% else%}
+                {{ task.end_date }}
+                {% endif %}</h2>
+            <hr>
+            <p>{{ task.description }}</p>
+        </div>
+    </div>
+</div>
 {% endblock body %}
