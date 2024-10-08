@@ -3,11 +3,17 @@
 {% block title %}PixelIt | Panel{% endblock title %}
 
 {% block body %}
-    <ul>
+    <ul id="tasks-container">
         {% for task in tasks %}
-        <li><a href="{% url 'todo:task_detail' task.slug %}">{{ task.title }}</a></li>
+        <li class>
+            <a class="task" href="{% url 'todo:task_detail' task.slug %}">
+                <div class="detail-container">
+                    <div class="detail"></div>
+                </div>
+                <h2>{{ task.title }}</h2>
+            </a>
+        </li>
         {% endfor %}
     </ul><br>
-    {{ tasks }}
 {% endblock body %}
 
