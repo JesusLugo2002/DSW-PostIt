@@ -10,7 +10,7 @@
                 <div class="detail-container">
                     <div class="detail"></div>
                 </div>
-                <div {% if task.checked %}style="text-decoration: line-through;"{% endif%}>
+                <div {% if task.done %}style="text-decoration: line-through;"{% endif%}>
                 {% if task.title|length < 30 %}
                     <h1 >{{ task.title }}</h1>
                 {% elif task.title|length < 50 %}

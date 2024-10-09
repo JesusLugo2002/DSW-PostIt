@@ -16,6 +16,11 @@
     <link rel="shortcut icon" href="{% static './assets/img/icon.png' %}" type="image/x-icon">
 </head>
 <body>
+    <header>
+        <a href="{% url 'todo:home' %}" id="all-tasks">All tasks</a>
+        <a href="{% url 'todo:done_tasks' %}" id="pending-tasks">Done tasks</a>
+        <a href="{% url 'todo:pending_tasks' %}" id="done-tasks">Pending tasks</a>
+    </header>
     {% block body %}{% endblock body %}
 </body>
 </html>

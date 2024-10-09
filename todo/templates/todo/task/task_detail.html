@@ -1,25 +1,38 @@
 {% extends "base.html" %}
 
-{% block title %}PixelIt | {{ task.title }}{% endblock title %}
+{% load static %}
+
+{% block title %}PostIt | {{ task }}{% endblock title %}
 
 {% block body %}
 <div class="main-container">
     <div class="post-it">
         <div class="content">
-            {% if task.checked %}
-                <h1 style="text-decoration: line-through;">{{ task.title }}</h1>
+            <div class="top-bar">
+            {% if task.done %}
+                <h1 style="text-decoration: line-through;">{{ task }}</h1>
             {% else %}
-                <h1>{{ task.title }}</h1>
+                <h1>{{ task }}</h1>
             {% endif %}
+                <a class="return-button" href="{% url 'todo:home' %}">
+                    <img src="{% static "assets/img/home.png" %}" width='50px'/>
+                </a>
+            </div>      
             <h2>Created at: {{ task.created_at }}</h2>
-            <h2>End date: 
-                {% if task.end_date is None %}
-                No date registered!
+            <h2>Deadline: 
+                {% if task.deadline is None %}
+                    No deadline provided!
                 {% else%}
-                {{ task.end_date }}
+                    {{ task.deadline }}
                 {% endif %}</h2>
             <hr>
-            <p>{{ task.description }}</p>
+            <p>
+                {% if task.description|length > 0 %}
+                    {{ task.description }}
+                {% else %}
+                    No description provided!
+                {% endif %}
+            </p>
         </div>
     </div>
 </div>

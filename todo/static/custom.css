@@ -1,8 +1,11 @@
 body {
-    background-image: url(./assets/img/background.jpg)
+    background-image: url(./assets/img/background.jpg);
+    margin: 0;
 }
 
 #tasks-container {
+    margin: 0;
+    padding-top: 10vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
@@ -69,6 +72,45 @@ ul li:nth-child(5n) a {
     text-align: center;
 }
 
+/* Header */
+
+header {
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    background-color: #f2b289;
+    justify-content: center;
+    align-items: center;
+    font-family: "kalam";
+    font-weight: bold;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
+    width: 20vw;
+    height: 5vh;
+    color: black;
+    transition: 0.3s;
+}
+
+header a:hover {
+    filter: brightness(1.1);
+}
+
+#all-tasks {
+    background-color: #D1E9F6;
+}
+
+#pending-tasks {
+    background-color: #CBE2B5;
+}
+
+#done-tasks {
+    background-color: #FF8A8A;
+}
+
 /* Task Detail */
 
 .main-container {
@@ -86,4 +128,23 @@ ul li:nth-child(5n) a {
     height: 50vh;
     width: 50vw;
     padding: 3em;
+}
+
+.return-button:hover {
+    animation: moveUp 1s;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
 }
