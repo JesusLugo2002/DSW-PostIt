@@ -5,7 +5,7 @@
 {% block body %}
     <ul id="tasks-container">
         {% for task in tasks %}
-        <li class>
+        <li>
             <a class="task" href="{% url 'todo:task_detail' task.slug %}">
                 <div class="detail-container">
                     <div class="detail"></div>
@@ -22,6 +22,13 @@
             </a>
         </li>
         {% endfor %}
+        <li>
+            <a class="task task-adder" href="{% url 'todo:add_task' %}">
+                <div class="detail-container">
+                    <div class="detail"></div>
+                </div>
+            </a>
+        </li>
     </ul><br>
 {% endblock body %}
 

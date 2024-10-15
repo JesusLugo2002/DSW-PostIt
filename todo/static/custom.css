@@ -59,6 +59,10 @@ ul li:nth-child(5n) a {
     position:relative;
 }
 
+.task-adder {
+    opacity: 0.5;
+}
+
 .detail-container {
     display: flex;
     justify-content: center;
@@ -147,4 +151,35 @@ header a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;   
+}
+
+/* Forms and input */
+
+#id_title {
+    background-color: #ffc;
+    border: 0px;
+    border-bottom: 3px dashed gray;
+    width: 80%;
+    height: 30px;
+    font-size: 24px;
+    font-family: "kalam";
+    font-weight: bold;
+}
+
+#id_deadline {
+    background-color: #ffc;
+    border: 0px;
+    border-bottom: 3px dashed gray;
+}
+
+#id_description {
+    background-color: #ffc;
+    border: 1px dashed gray;
+    font-family: "kalam";
+    height: 20vh;
+    width: 100%;
+}
+
+.deadline-label {
+    margin: 0px;
 }

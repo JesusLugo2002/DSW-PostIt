@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="main-container">
+    <form class="post-it" method="post" novalidate>
+        {% csrf_token %}
+        <h1>{{ form.title.label }}: {{ form.title }}</h1>
+        <h2>{{ form.deadline.label }}: {{ form.deadline }}</h2>
+        <hr>
+        <div class="content">
+            {{ form.description.label }}:<br>{{ form.description }}
+        </div>
+        <div class="submit-bar">
+            <label for="{{ form.done.id_for_done }}">Mark as completed: </label>{{ form.done }}<br>
+            <input type="submit" value="Crear tarea"/>
+        </div>
+    </form>
+<div>
+{% endblock body %}
+
