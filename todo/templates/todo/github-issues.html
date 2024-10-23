@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}PostIt | Panel{% endblock title %}
+
+{% block body %}
+    <ul id="tasks-container">
+        {% for issue in issues %}
+        <li>
+            <a class="task" href="{{ issue.html_url }}">
+                <div class="detail-container">
+                    <div class="detail"></div>
+                </div>
+                <div>
+                {% if issue.title|length < 30 %}
+                    <h1 >{{ issue.title }}</h1>
+                {% elif issue.title|length < 50 %}
+                    <h2>{{ issue.title }}</h2>
+                {% else %}
+                    <h3>{{ issue.title }}</h3>
+                {% endif %}
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul><br>
+{% endblock body %}

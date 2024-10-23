@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}PostIt | Setting GitHub Repo{% endblock title %}
+
+{% block body %}
+<div class="main-container">
+    <form class="post-it" method="post">
+        {% csrf_token %}
+        <input type="text" name="github-user" placeholder="Insert GitHub username...">
+        <input type="text" name="github-repo" placeholder="Insert repository name...">
+        <input type="submit" value="Send">
+    </form>
+</div>
+
+
+{% endblock body %}

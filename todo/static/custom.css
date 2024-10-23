@@ -115,6 +115,10 @@ header a:hover {
     background-color: #FF8A8A;
 }
 
+#github-issues {
+    background-image: linear-gradient(peru, lightyellow);
+}
+
 /* Task Detail */
 
 .main-container {
